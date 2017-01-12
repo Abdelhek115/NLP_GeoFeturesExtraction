@@ -4,11 +4,11 @@
 
 This scripts extract general features for Natural Language Processing. For example calculates chars per document or symbols per document etc. For more info check the script.
 
-- geolocation.py
+- `geolocation.py`
 
 This script extract geolocation features for english documents. Author's nationality is necessary.
 
-- both.py
+- `both.py`
 
 This script extract both general and geolocation features.
 
