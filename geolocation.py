@@ -25,8 +25,8 @@ text = []   # lista gia to katharo keimeno
 ids = []    # lista gia ta ids
 temp = []
 
-sample_read = csv.reader(open("/home/spithas/Dropbox/shared files/out2.csv/out2.csv","rb")) # anoigma to dataset csv
-
+file_path = raw_input("Give dataset's path")
+sample_read = csv.reader(open(file_path,"rb")) # anoigma to dataset csv
 
 # orisw san list ta slang gia kathe ethnikothta
 slang_freq_US = []
@@ -63,7 +63,7 @@ slang_GBR=['Tosser','Cock-up','Bloody','Blimey','Wanker','Gutted','Bespoke','Chu
 'Bollocks','Ponce','Bangers','Chips','Uni','Starkers','Smeg','Anorak','Shambles'
 'Plastered','Knob','Chav','Ace','Plonker','Dobber','BellEnd','Blighty','Rubbish']
 
-hits_US = { 'deck':0, 'bombed':0, 'booze':0, 'huffy':0, 'dough':0, 'hyped':0, 'cruise':0, 'klutz':0, 'chicken':0, 'jock':0, 'bummed':0, 'cut':0, 'cuffs':0, 'guts':0, 'bust':0, 'bench':0, 'jam':0, 'bummer':0, 'kick':0, 'goof':0, 'sucker':0, 'dope':0, 'joint':0, 'zapped':0, 'spook':0, 'cool':0, 'knock':0, 'megabucks':0, 'airhead':0, 'loser':0, 'vibes':0, 'goofy':0, 'gut':0, 'rack':0, 'bonkers':0, 'square':0, 'grub':0, 'nut':0, 'junkie':0, 'antifreeze':0, 'whiz':0, 'barf':0, 'racket':0, 'flashback':0, 'gross':0, 'fox':0, 'prod':0, 'hustle':0, 'kook':0, 'honcho':0, 'wussy':0, 'carb':0, 'intense':0, 'dork':0, 'dicey':0, 'cop':0, 'mega':0, 'blimp':0, 'flaky':0, 'armpit':0, 'ammo':0, 'croak':0, 'cushy':0, 'sack':0, 'kegger':0, 'gigglitch':0, 'ditch':0, 'cheesy':0, 'nuke':0, 'wad':0, 'puke':0, 'call':0, 'freebie':0, 'cram':0, 'mush':0, 'buck':0, 'grungy':0, 'mellow':0, 'glitzy':0, 'chintzy':0, 'eat':0, 'groovy':0, 'bashed':0, 'ace':0, 'blade':0, 'beemer':0, 'neat':0, 'rag':0, 'stink':0, 'scam':0, 'bent':0, 'clip':0, 'earful':0, 'clunker':0, 'totaled':0, 'rathole':0, 'peanuutss':0, 'lame':0, 'pickeld':0, 'foxy':0, 'pad':0, 'nark':0, 'grand':0, 'spud':0, 'quarterback':0, 'gravy':0, 'drag':0, 'nip':0, 'collar':0, 'paw':0, 'scarf':0, 'con':0 } 
+hits_US = { 'deck':0, 'bombed':0, 'booze':0, 'huffy':0, 'dough':0, 'hyped':0, 'cruise':0, 'klutz':0, 'chicken':0, 'jock':0, 'bummed':0, 'cut':0, 'cuffs':0, 'guts':0, 'bust':0, 'bench':0, 'jam':0, 'bummer':0, 'kick':0, 'goof':0, 'sucker':0, 'dope':0, 'joint':0, 'zapped':0, 'spook':0, 'cool':0, 'knock':0, 'megabucks':0, 'airhead':0, 'loser':0, 'vibes':0, 'goofy':0, 'gut':0, 'rack':0, 'bonkers':0, 'square':0, 'grub':0, 'nut':0, 'junkie':0, 'antifreeze':0, 'whiz':0, 'barf':0, 'racket':0, 'flashback':0, 'gross':0, 'fox':0, 'prod':0, 'hustle':0, 'kook':0, 'honcho':0, 'wussy':0, 'carb':0, 'intense':0, 'dork':0, 'dicey':0, 'cop':0, 'mega':0, 'blimp':0, 'flaky':0, 'armpit':0, 'ammo':0, 'croak':0, 'cushy':0, 'sack':0, 'kegger':0, 'gigglitch':0, 'ditch':0, 'cheesy':0, 'nuke':0, 'wad':0, 'puke':0, 'call':0, 'freebie':0, 'cram':0, 'mush':0, 'buck':0, 'grungy':0, 'mellow':0, 'glitzy':0, 'chintzy':0, 'eat':0, 'groovy':0, 'bashed':0, 'ace':0, 'blade':0, 'beemer':0, 'neat':0, 'rag':0, 'stink':0, 'scam':0, 'bent':0, 'clip':0, 'earful':0, 'clunker':0, 'totaled':0, 'rathole':0, 'peanuutss':0, 'lame':0, 'pickeld':0, 'foxy':0, 'pad':0, 'nark':0, 'grand':0, 'spud':0, 'quarterback':0, 'gravy':0, 'drag':0, 'nip':0, 'collar':0, 'paw':0, 'scarf':0, 'con':0 }
 hits_AUS = { 'sheila':0, 'esky':0, 'toonie':0, 'chockers':0, 'roo':0, 'sook':0, 'pash':0, 'prawn':0, 'jackaroo':0, 'parkade':0, 'ravo':0, 'thongs':0, 'bogan':0, 'trackies':0, 'grit':0, 'slab':0, 'eh':0, 'cockie':0, 'kayfa':0, 'arvo':0, 'grommet':0, 'barbie':0, 'dayliner':0, 'woomera':0, 'avo':0, 'derro':0, 'aboriginal':0, 'mate':0, 'mozzie':0, 'sickie':0, 'allophone':0, 'droke':0, 'pogey':0, 'wuss':0, 'canuck':0, 'washroom':0, 'pickerel':0, 'dag':0, 'barchelor':0, 'servo':0, 'goon':0, 'togs':0, 'toque':0, 'humidex':0, 'gostapo':0, 'serviette':0, 'aggro':0, 'blunnies':0, 'chigger':0, 'hydro':0, 'grit':0, 'chinook':0, 'legit':0, 'snowbird':0, 'whinge':0, 'ute':0, 'footy':0, 'bytown':0, 'loonie':0, 'booner':0, 'dob':0, 'plonk':0, 'chesterfield':0, 'sanga':0, 'dunny':0 }
 hits_GBR = { 'starkers':0, 'fit':0, 'ponce':0, 'anorak':0, 'shambles':0, 'hoover':0, 'wonky':0, 'rubbish':0, 'dodgy':0, 'arse':0, 'taking':0, 'bog roll':0, 'gutted':0, 'whingetad':0, 'bespoke':0, 'nickednutter':0, 'skive':0, 'bugger':0, 'fiver':0, 'smeg':0, 'chips':0, 'chuffedfancy':0, 'bloody':0, 'fortnight':0, 'fannybollocks':0, 'gobsmacked':0, 'shag':0, 'bangers':0, 'tenner':0, 'shamblesplastered':0, 'quid':0, 'punter':0, 'diy':0, 'wicked':0, 'knob':0, 'blighty':0, 'zedabsobloodylootely':0, 'blimey':0, 'kip':0, 'dobber':0, 'sorted':0, 'pants':0, 'throw':0, 'plonker':0, 'ace':0, 'brilliant':0, 'tosser':0, 'scouser':0, 'nosh':0, 'uni':0, 'bellend':0, 'wanker':0, 'chap':0, 'chav':0, 'cock-up':0, 'toff':0, 'knackered':0 }
 hits_CAN = { 'diss':0, 'pogle':0, 'puck':0, 'saskabushsasquatch':0, 'housecoat':0, 'serviette':0, 'skid':0, 'caper':0, 'jib':0, 'zed':0, 'maritimer':0, 'hammered':0, 'frog':0, 'cougar':0, 'randy':0, 'hydro':0, 'washroom':0, 'flat':0, 'grit':0, 'ginogorby':0, 'toboggan':0, 'mickeymountie':0, 'poutine':0, 'biffy':0, 'emo':0, 'loonie':0, 'hosed':0, 'kokanee':0, 'chinook':0, 'skookum':0, 'huckhumidex':0, 'rad':0, 'eh':0, 'parkade':0, 'tad':0, 'beaver':0, 'click':0, 'stinktown':0, 'hick':0, 'rez':0, 'tuque':0, 'spudhead':0, 'islander':0, 'habs':0, 'spinny':0, 'cancanuck':0, 'hoodie':0, 'java':0, 'pissed':0, 'winterpeg':0, 'heifer':0, 'stagettesteeltown':0, 'snowbirds':0, 'boonies':0 }
@@ -114,7 +114,7 @@ def national_commons_per_doc(text_nation, string_list):
         return format(counter/float(len(text_nation)), '.3f')
     else:
         return 0.00
-        
+
 def national_commons_per_doc_hits(text_nation, string_list, nat_str):
     counter = 0.00
     for j in string_list:
@@ -128,7 +128,7 @@ def national_commons_per_doc_hits(text_nation, string_list, nat_str):
 			hits_AUS[j.lower()] += count_word
 		elif nat_str == 'can' and count_word:
 			hits_CAN[j.lower()] += count_word
-		
+
     if counter!=0:
         return format(counter/float(len(text_nation)), '.3f')
     else:

@@ -27,7 +27,8 @@ text = []   # lista gia to katharo keimeno
 ids = []    # lista gia ta ids
 temp = []
 punctuations_count = []
-sample_read = csv.reader(open("/home/spithas/Dropbox/shared files/out2.csv/out2.csv","rb")) # anoigma to dataset csv
+file_path = raw_input("Give dataset's path")
+sample_read = csv.reader(open(file_path,"rb")) # anoigma to dataset csv
 punct1 = punct2 = punct3 = punct4 = punct5 = punct6 = punct7 = punct8 = []
 freq_a=freq_b=freq_c=freq_d=freq_e=freq_f=freq_g=freq_h=freq_i=freq_j=freq_k=freq_l=freq_m=freq_n=freq_o=freq_p=freq_q=freq_r=freq_s=freq_t=freq_v=freq_u=freq_w=freq_x=freq_y=freq_z=[]
 symbol1=symbol2=symbol3=symbol4=symbol5=symbol6=symbol7=symbol8=symbol9 = []
@@ -65,7 +66,7 @@ sent_detector = nltk.data.load('tokenizers/punkt/english.pickle')
 i=[]
 print('Basic feature processing...')
 for i in range(len(text)):
-	
+
     # ypologismos arithmou xarakthrwn ana keimeno
     text_len.append(len(text[i]))   # lista me ton arithmo xaraktirwn
     # ypologismos toy arithmou twn symvolwn ana keimeno
